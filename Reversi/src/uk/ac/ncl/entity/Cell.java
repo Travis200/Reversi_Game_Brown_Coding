@@ -89,7 +89,7 @@ public class Cell {
     }
 
     public int getRow() {
-        return column;
+        return row;
     }
 
     public int getColumn() {
