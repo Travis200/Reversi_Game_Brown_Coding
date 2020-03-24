@@ -14,3 +14,8 @@ Method: getFinalScore
 Date: 17/03/20
 Class: Cell
 ```public int getRow() {return column; }``` &rarr; ```public int getRow() {return row; }```
+
+Date 24/03/20  
+Class: MoveCheckerTest  
+Method: findPotentialMoves
+```(CellStatus.DARK)``` &rarr; ```(CellStatus.GRAY)```

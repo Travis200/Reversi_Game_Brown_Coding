@@ -39,7 +39,6 @@ class MoveCheckerTest {
     @Test
     void generateOpponentDark() {
         Cell cell = moveChecker.generateOpponent(CellStatus.DARK);
-
         assertTrue(cells[2][4] == cell || cells[3][5] == cell ||
                 cells[4][2] == cell || cells[5][3] == cell);
         assertTrue(cell.getMove() != null);
@@ -68,7 +67,7 @@ class MoveCheckerTest {
 
     @Test
     void findPotentialMoves() {
-        ArrayList<Cell> grayCells = moveChecker.findPotentialMoves(CellStatus.DARK);
+        ArrayList<Cell> grayCells = moveChecker.findPotentialMoves(CellStatus.GRAY);
         assertTrue(grayCells.size() == 5);
         assertTrue(grayCells.contains(cells[2][4]));
         assertTrue(grayCells.contains(cells[3][5]));
