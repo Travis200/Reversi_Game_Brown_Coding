@@ -29,3 +29,9 @@ Date: 24/03/20
 Class: MoveChecker
 Constructor: MoveChecker  
 Added in ```this.cells = cells;``` into the constructor
+
+Date: 24/03/20  
+Class: MoveChecker  
+Method: findPotentialMoves  
+Changed ```i <= BOARD_SIZE``` &rarr; ```i < BOARD_SIZE```
+in for loops
