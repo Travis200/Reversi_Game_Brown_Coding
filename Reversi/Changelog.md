@@ -24,3 +24,8 @@ Date: 24/03/20
 Class: MoveCheckerTest  
 Method: findPotentialMoves  
 ```grayCells.size() == 5``` &rarr; ```grayCells.size() == 4```
+
+Date: 24/03/20  
+Class: MoveChecker
+Constructor: MoveChecker  
+Added in ```this.cells = cells;``` into the constructor
