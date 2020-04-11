@@ -12,6 +12,8 @@ import uk.ac.ncl.entity.Cell;
 import java.util.ArrayList;
 
 import static uk.ac.ncl.Constants.*;
+import static uk.ac.ncl.entity.CellStatus.DARK;
+import static uk.ac.ncl.entity.CellStatus.LIGHT;
 
 /**
  *
@@ -33,7 +35,13 @@ public class MoveChecker {
      * @return a piece to make a move
      */
     public Cell generateOpponent(CellStatus cellStatus) {
-        ArrayList<Cell> potentialMoves = findPotentialMoves(CellStatus.DARK);
+        ArrayList<Cell> potentialMoves = null;
+        if (cellStatus == DARK) {
+            potentialMoves = findPotentialMoves(CellStatus.DARK);
+        }
+        else if (cellStatus == LIGHT) {
+            potentialMoves = findPotentialMoves(CellStatus.LIGHT);
+        }
         int max_score = 0;
         Cell opponentsMove = null;
         for (int i = 0; i < potentialMoves.size(); i++){
@@ -107,9 +115,9 @@ public class MoveChecker {
         int darks = 0;
         for (int row = 0; row < BOARD_SIZE; row++) {
             for (int column = 0; column < BOARD_SIZE; column++) {
-                if (this.cells[column][row].getValue() == CellStatus.LIGHT){
+                if (this.cells[column][row].getValue() == LIGHT){
                     lights++;
-                } else if (this.cells[row][column].getValue() == CellStatus.DARK) {
+                } else if (this.cells[row][column].getValue() == DARK) {
                     darks++;
                 }
             }

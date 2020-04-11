@@ -56,3 +56,18 @@ Class: Cell
 Method: isLegal  
 Removed element ```{0, 0}``` from ```DIRS``` 2D array. 
 
+Date: 11/04/20  
+Class: MoveChecker  
+Method: generateOpponent  
+Changed:  
+```ArrayList<Cell> potentialMoves = findPotentialMoves(CellStatus.DARK)```   
+&darr;  
+```ArrayList<Cell> potentialMoves = null;```    
+    ```if (cellStatus == DARK) {```    
+        ```potentialMoves = findPotentialMoves(CellStatus.DARK);```    
+    ```}```          
+    ```else if (cellStatus == LIGHT) {```     
+        ```potentialMoves = findPotentialMoves(CellStatus.LIGHT);```    
+    ```}```      
+    
+
