@@ -50,3 +50,9 @@ Date: 11/04/20
 Class: MoveChecker  
 Method: flipPieces  
 Changed ```&&``` &rarr; ```||``` in the while loop condition
+
+Date: 11/04/20  
+Class: Cell  
+Method: isLegal  
+Removed element ```{0, 0}``` from ```DIRS``` 2D array. 
+
