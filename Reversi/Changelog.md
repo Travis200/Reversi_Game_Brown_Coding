@@ -45,3 +45,8 @@ Date: 24/03/20
 Class: Cell  
 Method: isLegal  
 Added break statements into while loop
+
+Date: 11/04/20  
+Class: MoveChecker  
+Method: flipPieces  
+Changed ```&&``` &rarr; ```||``` in the while loop condition
