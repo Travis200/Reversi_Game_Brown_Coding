@@ -68,6 +68,11 @@ Changed:
     ```}```          
     ```else if (cellStatus == LIGHT) {```     
         ```potentialMoves = findPotentialMoves(CellStatus.LIGHT);```    
-    ```}```      
+    ```}``` 
+    
+Date: 11/04/20  
+Class: MoveChecker  
+Method: flipPieces  
+Added ```cells[d_row][d_col].setValue(colour);``` into for loop. 
     
 

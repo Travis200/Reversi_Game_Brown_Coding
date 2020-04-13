@@ -42,7 +42,7 @@ public class MoveChecker {
         else if (cellStatus == LIGHT) {
             potentialMoves = findPotentialMoves(CellStatus.LIGHT);
         }
-        int max_score = 0;
+        int max_score = 0  ;
         Cell opponentsMove = null;
         for (int i = 0; i < potentialMoves.size(); i++){
             if (potentialMoves.get(i).getMove().getScore() > max_score){
@@ -64,9 +64,8 @@ public class MoveChecker {
             int[] dir = move.getDirection();
             int d_row = cell.getRow();
             int d_col = cell.getColumn();
-
+            cells[d_row][d_col].setValue(colour);
             while (d_col != move.getCell().getColumn() || d_row != move.getCell().getRow()) {
-
                 d_row += dir[0];
                 d_col += dir[1];
             }
@@ -90,6 +89,11 @@ public class MoveChecker {
                 }
             }
         }
+//        For testing purposes
+//        System.out.println("These are the potential moves");
+//        for(Cell pos : potentialMoves) {
+//            System.out.println(pos.getRow() + " " + pos.getColumn());
+//        }
         return potentialMoves;
     }
 
@@ -115,9 +119,9 @@ public class MoveChecker {
         int darks = 0;
         for (int row = 0; row < BOARD_SIZE; row++) {
             for (int column = 0; column < BOARD_SIZE; column++) {
-                if (this.cells[column][row].getValue() == LIGHT){
+                if (this.cells[row][column].getValue() == LIGHT){
                     lights++;
-                } else if (this.cells[row][column].getValue() == DARK) {
+                } else if (this.cells[column][row].getValue() == DARK) {
                     darks++;
                 }
             }
