@@ -10,10 +10,10 @@ import uk.ac.ncl.entity.DirectedMove;
 import uk.ac.ncl.entity.Cell;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static uk.ac.ncl.Constants.*;
-import static uk.ac.ncl.entity.CellStatus.DARK;
-import static uk.ac.ncl.entity.CellStatus.LIGHT;
+import static uk.ac.ncl.entity.CellStatus.*;
 
 /**
  *
@@ -59,18 +59,52 @@ public class MoveChecker {
      * @param colour - colour of the current player
      */
     public void flipPieces(Cell cell, CellStatus colour) {
+        CellStatus oppColour = null;
+        if (colour == DARK) {
+            oppColour = LIGHT;
+        }
+        else if (colour == LIGHT){
+            oppColour = DARK;
+        }
         cell.colourTemp(colour == OPPONENTS_CELL_STATUS ? OPPONENTS_COLOUR : PLAYERS_COLOUR, false);
         for (DirectedMove move : cell.getMove().getMoves()) {
-            int[] dir = move.getDirection();
+            int[] direction = move.getDirection();
             int d_row = cell.getRow();
             int d_col = cell.getColumn();
             cells[d_row][d_col].setValue(colour);
-            while (d_col != move.getCell().getColumn() || d_row != move.getCell().getRow()) {
-                d_row += dir[0];
-                d_col += dir[1];
+                ArrayList<Cell> piecesToFlip = new ArrayList<Cell>();
+                d_row = cell.getRow();
+                d_col = cell.getColumn();
+                boolean abc = true;
+                boolean flipCheckersBool = false;
+                while (abc == true) {
+                        d_row += direction[0];
+                        d_col += direction[1];
+                    if ((-1 < d_row && d_row < 8) && (-1 < d_col && d_col < 8)) {
+                            if (cells[d_row][d_col].getValue() == oppColour) {
+                                piecesToFlip.add(cells[d_row][d_col]);
+                            }
+                            else if (cells[d_row][d_col].getValue() == colour) {
+                                if (piecesToFlip.size() > 0) {
+                                    flipCheckersBool = true;
+                                }
+                                abc = false;
+                            }
+                            else {
+                                abc = false;
+                            }
+
+                    if (flipCheckersBool == true) {
+                        for (Cell piece : piecesToFlip) {
+                            int d_row1 = piece.getRow();
+                            int d_col1 = piece.getColumn();
+                            cells[d_row1][d_col1].setValue(colour);
+                        }
+                        }
+                    }
+                }
             }
         }
-    }
 
     /**
      * Returns potential moves on the board for the specified colour
@@ -78,17 +112,18 @@ public class MoveChecker {
      * @param colour - colour of the current player
      * @return pieces for which there exist valid moves
      */
-    public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
-        ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            for (int j = 0; j < BOARD_SIZE; j++) {
-                if (this.cells[i][j].getValue() == CellStatus.EMPTY){
-                    if (this.cells[i][j].isLegal(colour, cells)){
-                        potentialMoves.add(this.cells[i][j]);
+        public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
+            ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
+            for (int i = 0; i < BOARD_SIZE; i++) {
+                for (int j = 0; j < BOARD_SIZE; j++) {
+                    if (this.cells[i][j].getValue() == CellStatus.EMPTY){
+                        if (this.cells[i][j].isLegal(colour, cells)){
+                            potentialMoves.add(this.cells[i][j]);
+                        }
                     }
                 }
             }
-        }
+
 //        For testing purposes
 //        System.out.println("These are the potential moves");
 //        for(Cell pos : potentialMoves) {

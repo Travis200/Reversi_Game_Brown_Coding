@@ -70,9 +70,16 @@ Changed:
         ```potentialMoves = findPotentialMoves(CellStatus.LIGHT);```    
     ```}``` 
     
-Date: 11/04/20  
+Date: 13/04/20  
 Class: MoveChecker  
 Method: flipPieces  
 Added ```cells[d_row][d_col].setValue(colour);``` into for loop. 
+
+Date: 15/04/20  
+Class: MoveChecker  
+Method: flipPieces  
+Added code so that pieces flip correctly (including so that the pieces of opposite colour between two pieces of the
+same colour flip automatically). However there is a bug that causes the program to sometimes crash when pieces on the 
+edge of the board are flipped.
     
 

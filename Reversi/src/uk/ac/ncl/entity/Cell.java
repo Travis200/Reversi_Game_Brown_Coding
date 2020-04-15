@@ -117,7 +117,6 @@ public class Cell {
         int score = 0;
         ArrayList<DirectedMove> moves = new ArrayList<DirectedMove>();
         int[][] DIRS = {{-1,-1}, {-1,0}, {-1,1}, {0,1}, {0,-1}, {1,1}, {1,0}, {1,-1}};
-
         for (int[] dir : DIRS){
             int temp_score = 0;
             int d_row = this.getRow() + dir[0];
