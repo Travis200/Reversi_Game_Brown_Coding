@@ -78,8 +78,21 @@ Added ```cells[d_row][d_col].setValue(colour);``` into for loop.
 Date: 15/04/20  
 Class: MoveChecker  
 Method: flipPieces  
-Added code so that pieces flip correctly (including so that the pieces of opposite colour between two pieces of the
-same colour flip automatically). However there is a bug that causes the program to sometimes crash when pieces on the 
-edge of the board are flipped.
+Added and changed code so that pieces flip correctly (including so that the pieces of opposite colour between two pieces 
+of the same colour flip automatically). However there is a bug that causes the program to sometimes crash when pieces 
+on the edge of the board are flipped.  
+Also removed ```while (d_col != move.getCell().getColumn() || d_row != move.getCell().getRow())```
+
+Date: 16/04/20  
+Class: Cell  
+Method: isLegal  
+Changed ```if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
+&& cells[d_row][d_col].getValue() != CellStatus.EMPTY)```  
+&darr;  
+```if if (0 <= d_col &&  d_col < 8 && 0 <=  d_row && d_row < 8```
+```&& cells[d_row][d_col].getValue() != CellStatus.EMPTY)``` 
+
+
+
     
 

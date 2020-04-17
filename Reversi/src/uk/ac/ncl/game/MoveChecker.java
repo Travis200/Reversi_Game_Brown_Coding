@@ -102,6 +102,9 @@ public class MoveChecker {
                         }
                         }
                     }
+                    else {
+                        abc = false;
+                    }
                 }
             }
         }
