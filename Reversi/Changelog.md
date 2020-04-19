@@ -92,7 +92,12 @@ Changed ```if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
 ```if if (0 <= d_col &&  d_col < 8 && 0 <=  d_row && d_row < 8```
 ```&& cells[d_row][d_col].getValue() != CellStatus.EMPTY)``` 
 
+Date: 19/04/20  
+Class: MoveChecker   
+Method: flipCheckers
+Created pause method which is called in the flipCheckers class so that there is a delay between flipping
+so that the user can see what is happening between their and the opponents moves.
 
 
-    
+
 

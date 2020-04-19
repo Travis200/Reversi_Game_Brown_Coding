@@ -24,6 +24,7 @@ public class MoveChecker {
 
     private Cell[][] cells;
 
+
     public MoveChecker(Cell[][] cells) {
         this.cells = cells;
     }
@@ -59,6 +60,7 @@ public class MoveChecker {
      * @param colour - colour of the current player
      */
     public void flipPieces(Cell cell, CellStatus colour) {
+        pause(1000);
         CellStatus oppColour = null;
         if (colour == DARK) {
             oppColour = LIGHT;
@@ -184,5 +186,11 @@ public class MoveChecker {
         }
     }
 
-
+    public static void pause(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            System.err.format("IOException: %s%n", e);
+        }
+    }
 }
