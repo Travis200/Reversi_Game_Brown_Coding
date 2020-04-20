@@ -94,9 +94,22 @@ Changed ```if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
 
 Date: 19/04/20  
 Class: MoveChecker   
-Method: flipCheckers
+Method: flipCheckers  
 Created pause method which is called in the flipCheckers class so that there is a delay between flipping
 so that the user can see what is happening between their and the opponents moves.
+
+Date: 20/04/20  
+Class: Cell   
+Method: isLegal   
+Changed   
+```if (cells[d_row][d_col].getValue() == colour)```  
+&darr;  
+```while (cells[d_row][d_col].getValue() == colour)```  
+This fixes a bug so that now potential moves appear for where there is more than one of the opponents colours 
+between the players and the space where there is a potential move whereas before they did not. 
+
+
+
 
 
 

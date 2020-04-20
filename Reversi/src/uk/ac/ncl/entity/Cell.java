@@ -130,13 +130,10 @@ public class Cell {
                     temp_score += 1;
                     if (0 <= d_col &&  d_col < 8 && 0 <=  d_row && d_row < 8
                             && cells[d_row][d_col].getValue() != CellStatus.EMPTY){
-                        if (cells[d_row][d_col].getValue() == colour) {
+                        while (cells[d_row][d_col].getValue() == colour) {
                             isLegal = true;
                             score += temp_score;
                             moves.add(new DirectedMove(cells[d_row][d_col], dir));
-                            break;
-                        }
-                        else {
                             break;
                         }
                     }

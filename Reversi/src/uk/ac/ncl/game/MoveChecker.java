@@ -60,7 +60,7 @@ public class MoveChecker {
      * @param colour - colour of the current player
      */
     public void flipPieces(Cell cell, CellStatus colour) {
-        pause(1000);
+        pause(800);
         CellStatus oppColour = null;
         if (colour == DARK) {
             oppColour = LIGHT;
@@ -77,9 +77,9 @@ public class MoveChecker {
                 ArrayList<Cell> piecesToFlip = new ArrayList<Cell>();
                 d_row = cell.getRow();
                 d_col = cell.getColumn();
-                boolean abc = true;
+                boolean sameDirection = true;
                 boolean flipCheckersBool = false;
-                while (abc == true) {
+                while (sameDirection == true) {
                         d_row += direction[0];
                         d_col += direction[1];
                     if ((-1 < d_row && d_row < 8) && (-1 < d_col && d_col < 8)) {
@@ -90,10 +90,10 @@ public class MoveChecker {
                                 if (piecesToFlip.size() > 0) {
                                     flipCheckersBool = true;
                                 }
-                                abc = false;
+                                sameDirection = false;
                             }
                             else {
-                                abc = false;
+                                sameDirection = false;
                             }
 
                     if (flipCheckersBool == true) {
@@ -105,7 +105,7 @@ public class MoveChecker {
                         }
                     }
                     else {
-                        abc = false;
+                        sameDirection = false;
                     }
                 }
             }
