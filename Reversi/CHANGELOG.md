@@ -6,18 +6,21 @@ Class: MoveCheckerTest
 
 Date: 17/03/20  
 Class: MoveChecker  
-Method: getFinalScore
+Method: getFinalScore  
 ```else if this.cells[row][column].getValue() == CellStatus.DARK```   
 &darr;   
 ```else if (this.cells[row][column].getValue() == CellStatus.DARK)```
 
 Date: 17/03/20  
 Class: Cell  
-```public int getRow() {return column; }``` &rarr; ```public int getRow() {return row; }```
+Changed:       
+```public int getRow() {return column; }```   
+&darr;   
+```public int getRow() {return row; }```
 
 Date: 24/03/20  
 Class: MoveCheckerTest  
-Method: findPotentialMoves
+Method: findPotentialMoves  
 ```(CellStatus.DARK)``` &rarr; ```(CellStatus.GRAY)```
 
 Date: 24/03/20  
@@ -43,7 +46,7 @@ Method: isLegal
 
 Date: 24/03/20  
 Class: Cell  
-Method: isLegal  
+Method: isLegal    
 Added break statements into while loop
 
 Date: 11/04/20  
@@ -89,7 +92,7 @@ Method: isLegal
 Changed ```if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
 && cells[d_row][d_col].getValue() != CellStatus.EMPTY)```  
 &darr;  
-```if if (0 <= d_col &&  d_col < 8 && 0 <=  d_row && d_row < 8```
+```if (0 <= d_col &&  d_col < 8 && 0 <=  d_row && d_row < 8```
 ```&& cells[d_row][d_col].getValue() != CellStatus.EMPTY)``` 
 
 Date: 19/04/20  
@@ -111,7 +114,7 @@ between the players and the space where there is a potential move whereas before
 Date: 20/04/20  
 Class: MoveChecker   
 Method: getFinalScore  
-Changed   
+Changed:     
 ```else if (this.cells[column][row].getValue() == DARK)```    
 &darr;   
 ```else if (this.cells[row][column].getValue() == DARK)```  
@@ -126,8 +129,9 @@ except findPotentialMoves.
 
 Date: 20/04/20  
 Class: MoveCheckerTest   
-Method: findPotentialMoves
-Corrected bug which I had created by mistake in the findPotentialMoves test. Changed   
+Method: findPotentialMoves  
+Corrected bug which I had created by mistake in the findPotentialMoves test.    
+Changed:   
 ```moveChecker.findPotentialMoves(CellStatus.GRAY);```  
 &darr;  
 ```moveChecker.findPotentialMoves(CellStatus.DARK);```

@@ -60,7 +60,7 @@ public class MoveChecker {
      * @param colour - colour of the current player
      */
     public void flipPieces(Cell cell, CellStatus colour) {
-        pause(1);
+        pause(300);
         CellStatus oppColour = null;
         if (colour == DARK) {
             oppColour = LIGHT;
