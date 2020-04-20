@@ -32,13 +32,8 @@ public class MoveChecker {
      * @return a piece to make a move
      */
     public Cell generateOpponent(CellStatus cellStatus) {
-        ArrayList<Cell> potentialMoves = null;
-//        if (cellStatus == DARK) {
+        ArrayList<Cell> potentialMoves;
             potentialMoves = findPotentialMoves(cellStatus);
-//        }
-//        else if (cellStatus == LIGHT) {
-//            potentialMoves = findPotentialMoves(CellStatus.LIGHT);
-//        }
         int max_score = 0  ;
         Cell opponentsMove = null;
         for (int i = 0; i < potentialMoves.size(); i++){
