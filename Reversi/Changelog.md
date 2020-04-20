@@ -118,5 +118,10 @@ Changed
 Also added else statement to wrap the code if the result not a draw.
 Scoring system works correctly when the program is run however the getFinalScore test still fails.
 
+Date: 20/04/20  
+Class: MoveCheckerTest   
+Method: getFinalScore  
+Corrected bug in getFinalScore test. Added ```+ " pieces"``` to the String result. All tests now pass
+except findPotentialMoves.
 
 
