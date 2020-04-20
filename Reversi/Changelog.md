@@ -108,9 +108,15 @@ Changed
 This fixes a bug so that now potential moves appear for where there is more than one of the opponents colours 
 between the players and the space where there is a potential move whereas before they did not. 
 
-
-
-
+Date: 20/04/20  
+Class: MoveChecker   
+Method: getFinalScore  
+Changed   
+```else if (this.cells[column][row].getValue() == DARK)```    
+&darr;   
+```else if (this.cells[row][column].getValue() == DARK)```  
+Also added else statement to wrap the code if the result not a draw.
+Scoring system works correctly when the program is run however the getFinalScore test still fails.
 
 
 
