@@ -8,10 +8,7 @@ package uk.ac.ncl.game;
 import uk.ac.ncl.entity.CellStatus;
 import uk.ac.ncl.entity.DirectedMove;
 import uk.ac.ncl.entity.Cell;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import static uk.ac.ncl.Constants.*;
 import static uk.ac.ncl.entity.CellStatus.*;
 
@@ -23,7 +20,6 @@ import static uk.ac.ncl.entity.CellStatus.*;
 public class MoveChecker {
 
     private Cell[][] cells;
-
 
     public MoveChecker(Cell[][] cells) {
         this.cells = cells;
@@ -82,7 +78,7 @@ public class MoveChecker {
                 while (sameDirection == true) {
                         d_row += direction[0];
                         d_col += direction[1];
-                    if ((-1 < d_row && d_row < 8) && (-1 < d_col && d_col < 8)) {
+                    if ((-1 < d_row && d_row < BOARD_SIZE) && (-1 < d_col && d_col < BOARD_SIZE)) {
                             if (cells[d_row][d_col].getValue() == oppColour) {
                                 piecesToFlip.add(cells[d_row][d_col]);
                             }
@@ -115,7 +111,7 @@ public class MoveChecker {
      * Returns potential moves on the board for the specified colour
      *
      * @param colour - colour of the current player
-     * @return pieces for which there exist valid moves
+     * @return An array list of potential moves
      */
         public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
             ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
@@ -173,7 +169,7 @@ public class MoveChecker {
     /**
      * Cleans up potential moves from the board cells
      *
-     * @param grayCells - pieces with valid moves
+     * @param grayCells - pieces which were valid moves
      */
     public void removeMoves(ArrayList<Cell> grayCells){
         if (grayCells != null){

@@ -93,7 +93,9 @@ Changed ```if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
 && cells[d_row][d_col].getValue() != CellStatus.EMPTY)```  
 &darr;  
 ```if (0 <= d_col &&  d_col < 8 && 0 <=  d_row && d_row < 8```
-```&& cells[d_row][d_col].getValue() != CellStatus.EMPTY)``` 
+```&& cells[d_row][d_col].getValue() != CellStatus.EMPTY)```   
+Note: on the 20/04/20 I later changed ```8``` &rarr; ```BOARD_SIZE``` to improve the versatility of the code. 
+
 
 Date: 19/04/20  
 Class: MoveChecker   

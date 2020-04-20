@@ -107,9 +107,9 @@ public class Cell {
     /**
      * Checks whether there exists a legal move for the piece.
      * If such a move exists, returns true and adds information to the piece.
-     * @param colour - colour of the current player
-     * @param
-     * @return whether move is possible for the piece. If this is the case, then possible moves are stored in Piece.
+     * @param colour - colour of the current player.
+     * @param cells - The cell which will be checked to see if this is a legal move.
+     * @return boolean value for whether move is possible for the piece.
      */
     public boolean isLegal(CellStatus colour, Cell[][] cells){
         CellStatus opponent = colour == CellStatus.LIGHT ? CellStatus.DARK : CellStatus.LIGHT;
