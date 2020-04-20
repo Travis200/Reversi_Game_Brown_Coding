@@ -60,7 +60,7 @@ public class MoveChecker {
      * @param colour - colour of the current player
      */
     public void flipPieces(Cell cell, CellStatus colour) {
-        pause(10);
+        pause(1);
         CellStatus oppColour = null;
         if (colour == DARK) {
             oppColour = LIGHT;
@@ -128,12 +128,6 @@ public class MoveChecker {
                     }
                 }
             }
-
-//        For testing purposes
-//        System.out.println("These are the potential moves");
-//        for(Cell pos : potentialMoves) {
-//            System.out.println(pos.getRow() + " " + pos.getColumn());
-//        }
         return potentialMoves;
     }
 

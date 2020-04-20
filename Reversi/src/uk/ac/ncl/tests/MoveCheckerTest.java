@@ -66,7 +66,7 @@ class MoveCheckerTest {
 
     @Test
     void findPotentialMoves() {
-        ArrayList<Cell> grayCells = moveChecker.findPotentialMoves(CellStatus.GRAY);
+        ArrayList<Cell> grayCells = moveChecker.findPotentialMoves(CellStatus.DARK);
         assertTrue(grayCells.size() == 4);
         assertTrue(grayCells.contains(cells[2][4]));
         assertTrue(grayCells.contains(cells[3][5]));

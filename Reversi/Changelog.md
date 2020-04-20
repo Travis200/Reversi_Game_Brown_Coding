@@ -124,4 +124,12 @@ Method: getFinalScore
 Corrected bug in getFinalScore test. Added ```+ " pieces"``` to the String result. All tests now pass
 except findPotentialMoves.
 
+Date: 20/04/20  
+Class: MoveCheckerTest   
+Method: findPotentialMoves
+Corrected bug which I had created by mistake in the findPotentialMoves test. Changed   
+```moveChecker.findPotentialMoves(CellStatus.GRAY);```  
+&darr;  
+```moveChecker.findPotentialMoves(CellStatus.DARK);```
+
 
