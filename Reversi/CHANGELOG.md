@@ -71,7 +71,9 @@ Changed:
     ```}```          
     ```else if (cellStatus == LIGHT) {```     
         ```potentialMoves = findPotentialMoves(CellStatus.LIGHT);```    
-    ```}``` 
+    ```}```  
+Note: On the 20/04/20 I replaced the if/else statement with ```potentialMoves = findPotentialMoves(cellStatus);```
+as I realised this would be a more efficient way of writing the code. 
     
 Date: 13/04/20  
 Class: MoveChecker  
