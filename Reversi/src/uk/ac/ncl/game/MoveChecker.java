@@ -174,6 +174,10 @@ public class MoveChecker {
         }
     }
 
+    /**
+     * This adds a delay which is used when flipping pieces which makes the game easier for the user to follow
+     * @param ms length of the desired delay in milliseconds
+     */
     public static void pause(int ms) {
         try {
             Thread.sleep(ms);
