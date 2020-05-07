@@ -2,11 +2,13 @@
 
 Date: 17/03/20  
 Class: MoveCheckerTest  
+Changed:  
 ```import uk.ac.ncl.entity.Cell``` &rarr; ```import uk.ac.ncl.entity.Cell;```
 
 Date: 17/03/20  
 Class: MoveChecker  
 Method: getFinalScore  
+Changed:  
 ```else if this.cells[row][column].getValue() == CellStatus.DARK```   
 &darr;   
 ```else if (this.cells[row][column].getValue() == CellStatus.DARK)```
@@ -21,38 +23,42 @@ Changed:
 Date: 24/03/20  
 Class: MoveCheckerTest  
 Method: findPotentialMoves  
+Changed:  
 ```(CellStatus.DARK)``` &rarr; ```(CellStatus.GRAY)```
 
 Date: 24/03/20  
 Class: MoveCheckerTest   
-Method: findPotentialMoves   
+Method: findPotentialMoves  
+Changed:   
 ```grayCells.size() == 5``` &rarr; ```grayCells.size() == 4```
 
 Date: 24/03/20  
-Class: MoveChecker
+Class: MoveChecker  
 Constructor: MoveChecker  
+Changed:  
 Added in ```this.cells = cells;``` into the constructor
 
 Date: 24/03/20  
 Class: MoveChecker  
 Method: findPotentialMoves  
 Changed ```i <= BOARD_SIZE``` &rarr; ```i < BOARD_SIZE```
-in for loops
+in for loops.
 
 Date: 24/03/20  
 Class: Cell  
-Method: isLegal  
+Method: isLegal 
+Changed:   
 ```d_col += dir[0];``` &rarr; ```d_col += dir[1];```
 
 Date: 24/03/20  
 Class: Cell  
 Method: isLegal    
-Added break statements into while loop
+Added break statements into while loop.
 
 Date: 11/04/20  
 Class: MoveChecker  
 Method: flipPieces  
-Changed ```&&``` &rarr; ```||``` in the while loop condition
+Changed ```&&``` &rarr; ```||``` in the while loop condition.
 
 Date: 11/04/20  
 Class: Cell  
@@ -84,7 +90,7 @@ Added ```cells[d_row][d_col].setValue(colour);``` into for loop.
 Date: 15/04/20  
 Class: MoveChecker  
 Method: flipPieces  
-Added and changed code so that pieces flip correctly (including so that the pieces of opposite colour between two pieces 
+Added and changed code so that pieces flip correctly (including so that multiple pieces of opposite colour between two pieces 
 of the same colour flip automatically). However there is a bug that causes the program to sometimes crash when pieces 
 on the edge of the board are flipped.  
 Also removed ```while (d_col != move.getCell().getColumn() || d_row != move.getCell().getRow())```
@@ -109,7 +115,7 @@ so that the user can see what is happening between their and the opponents moves
 Date: 20/04/20  
 Class: Cell   
 Method: isLegal   
-Changed   
+Changed:     
 ```if (cells[d_row][d_col].getValue() == colour)```  
 &darr;  
 ```while (cells[d_row][d_col].getValue() == colour)```  
@@ -135,8 +141,8 @@ except findPotentialMoves.
 Date: 20/04/20  
 Class: MoveCheckerTest   
 Method: findPotentialMoves  
-Corrected bug which I had created by mistake in the findPotentialMoves test.    
-Changed:   
+Corrected bug which I had created by mistake in the findPotentialMoves test. All tests now pass.    
+Changed:     
 ```moveChecker.findPotentialMoves(CellStatus.GRAY);```  
 &darr;  
 ```moveChecker.findPotentialMoves(CellStatus.DARK);```
